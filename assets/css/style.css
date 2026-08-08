@@ -287,7 +287,7 @@ ul.list-check li::before {
 
 /* === MAIN === */
 .section-padding {
-	padding: 120px 0 100px;
+	padding: 60px 0 80px;
 }
 
 
@@ -544,7 +544,45 @@ SOCIAL ICON
     background: #222;
 }
 
+/* Navbar icon tooltips */
+.navbar-custom .nav li a[data-tooltip] {
+    position: relative;
+}
+.navbar-custom .nav li a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1e23;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: none;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+    z-index: 999;
+}
+.navbar-custom .nav li a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
+/* Timeline ordered list styles */
+.timeline-content ol {
+    list-style: decimal;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+.timeline-content ol li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
 
 /* === About Section === */
 .short-info {
@@ -852,7 +890,7 @@ Resume Timeline
 .timeline>li .timeline-panel {
     float: left;
     width: 43%;
-    text-align: right;
+    text-align: left;
     border: 1px solid #eee;
     position: relative;
 }
